@@ -1,4 +1,20 @@
+interface AuthorData {
+  name: string;
+  lastname: string;
+}
+
+interface CategoryData {
+  id: string;
+  name: string;
+}
+
 interface ItemResult {
+  author: AuthorData;
+  categories: CategoryData[];
+  items: ItemData[];
+}
+
+interface ItemData {
   id: string;
   title: string;
   price: {

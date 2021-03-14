@@ -7,7 +7,7 @@ export const ProductItemWrapper = styled.div`
 `;
 
 export const ImageContainer = styled.div<{ img: string }>`
-  background-color: #eee;
+  background-color: #fff;
   background-image: url(${(props) => props.img});
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */

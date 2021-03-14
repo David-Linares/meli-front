@@ -3,7 +3,7 @@ import { ProductItem } from "../../molecules/ProductItem/product-item.component"
 import { ResultItemsWrapper } from "./result-items.styles";
 
 interface ResultItemsProps {
-  items: ItemResult[];
+  items: ItemData[];
 }
 
 export function ResultItems({ items }: ResultItemsProps) {

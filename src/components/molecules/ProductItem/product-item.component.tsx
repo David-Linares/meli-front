@@ -11,7 +11,7 @@ import {
 } from "./product-item.styles";
 
 interface ProductItemProps {
-  productItem: ItemResult;
+  productItem: ItemData;
 }
 
 export function ProductItem({ productItem }: ProductItemProps) {

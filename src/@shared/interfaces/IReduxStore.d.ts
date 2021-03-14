@@ -4,7 +4,7 @@ interface ReduxStore {
 }
 
 interface ItemResultState {
-  itemsDataResult: ItemResult[];
+  itemsDataResult: ItemResult;
   itemsDataError: boolean;
   itemsDataFetching: boolean;
 }

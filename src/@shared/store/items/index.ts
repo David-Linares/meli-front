@@ -1,31 +1,45 @@
-interface ItemsState {}
+const initialState = {
+  itemsDataResult: {} as ItemResult,
+  itemsDataError: false,
+  itemsDataFetching: false,
+};
 
-const initialState = {};
-
-function ItemReducer(
-  state: ItemsState = initialState,
+export function ItemReducer(
+  state: ItemResultState = initialState,
   action: ItemsActionTypes
-): ItemsState {
+): ItemResultState {
   switch (action.type) {
     case "FETCH_ITEMS_START":
       return {
-        itemsDataResult: [],
+        ...state,
+        itemsDataResult: {} as ItemResult,
         itemsDataError: false,
         itemsDataFetching: true,
       };
     case "FETCH_ITEMS_DONE":
       return {
+        ...state,
         itemsDataResult: action.payload,
         itemsDataError: false,
         itemsDataFetching: false,
       };
-      break;
     case "FETCH_ITEMS_FAILED":
-      break;
+      return {
+        ...state,
+        itemsDataResult: {} as ItemResult,
+        itemsDataError: true,
+        itemsDataFetching: false,
+      };
     case "FETCH_ITEMS_RESET":
-      break;
-
+      return {
+        ...state,
+        itemsDataResult: {} as ItemResult,
+        itemsDataError: false,
+        itemsDataFetching: false,
+      };
     default:
-      break;
+      return {
+        ...state,
+      };
   }
 }

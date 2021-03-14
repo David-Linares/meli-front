@@ -1,12 +1,17 @@
 import { Text } from "../../atoms/Text/text.component";
 import { BreadcrumbWrapper } from "./breadcrumb.styles";
 
-export function Breadcrumb() {
+interface BreadcrumbProps {
+  breadItems: CategoryData[];
+}
+
+export function Breadcrumb({ breadItems }: BreadcrumbProps) {
   return (
     <BreadcrumbWrapper>
-      <Text style={{ color: "#333", margin: "0 20px" }}>Hola Mundo</Text>/
-      <Text style={{ color: "#333", margin: "0 20px" }}>Hola Mundo</Text>/
-      <Text style={{ color: "#333", margin: "0 20px" }}>Hola Mundo</Text>
+      {breadItems &&
+        breadItems.map((bread) => (
+          <Text style={{ color: "#333", margin: "0 20px" }}>{bread.name}</Text>
+        ))}
     </BreadcrumbWrapper>
   );
 }
