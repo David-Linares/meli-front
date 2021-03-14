@@ -18,8 +18,6 @@ export function DetailItemPage() {
   const dispatch = useDispatch();
   const urlParams = useParams<DetailParams>();
 
-  console.log("urlParams", urlParams);
-
   const { itemsDataResult, itemsDataError, itemsDataFetching } = useSelector(
     selectItemsData
   );
@@ -43,7 +41,13 @@ export function DetailItemPage() {
       <Header></Header>
       <Breadcrumb
         breadItems={
-          [] /* itemsDataResult.categories && itemsDataResult.categories.slice(0, 3) */
+          itemsDataResult &&
+          itemsDataResult.categories &&
+          itemsDataResult.categories
+            .slice(0, 3)
+            .concat([
+              { name: detailItemResult.item && detailItemResult.item.title },
+            ])
         }
       />
       <DetailItem detailItem={detailItemResult.item}></DetailItem>

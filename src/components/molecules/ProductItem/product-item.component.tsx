@@ -1,6 +1,7 @@
 import { useHistory } from "react-router";
 import { formatter } from "../../../@shared/helpers";
 import { Text } from "../../atoms/Text/text.component";
+import shipping from "../../../assets/shipping.png";
 import {
   ProductItemWrapper,
   ImageContainer,
@@ -33,6 +34,15 @@ export function ProductItem({ productItem }: ProductItemProps) {
         <ProductInfo>
           <PriceInfo>
             <Text>{formatter.format(productItem.price.amount)}</Text>
+            {productItem.free_shipping && (
+              <ImageContainer
+                style={{ height: "20px", width: "20px", marginLeft: "16px" }}
+                onClick={() => {
+                  handleClick(productItem.id);
+                }}
+                img={shipping}
+              />
+            )}
           </PriceInfo>
           <ProductName>
             <Text>{productItem.title}</Text>

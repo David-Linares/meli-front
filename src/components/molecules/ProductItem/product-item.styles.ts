@@ -32,6 +32,8 @@ export const ProductInfo = styled.div`
 export const PriceInfo = styled.div`
   margin-top: 8px;
   font-size: 24px;
+  display: flex;
+  align-items: center;
 `;
 export const ProductName = styled.div`
   margin-top: 32px;
