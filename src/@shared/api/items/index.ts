@@ -18,4 +18,14 @@ export class ItemsService extends BaseMicroservice {
       this.responseToJson
     );
   }
+
+  public getItemDetail(id: string) {
+    const url = `${this.baseUrl}/${id}`;
+    const fetchOptions = {
+      "Content-Type": "application/json",
+    };
+    return fetch(url, { ...fetchOptions, method: "GET" }).then(
+      this.responseToJson
+    );
+  }
 }

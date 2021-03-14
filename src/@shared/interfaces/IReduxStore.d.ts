@@ -7,4 +7,7 @@ interface ItemResultState {
   itemsDataResult: ItemResult;
   itemsDataError: boolean;
   itemsDataFetching: boolean;
+  detailItemResult: DetailItemData;
+  detailItemError: boolean;
+  detailItemFetching: boolean;
 }

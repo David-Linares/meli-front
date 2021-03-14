@@ -28,6 +28,11 @@ interface ItemData {
   address: string;
 }
 
+interface DetailItemData extends ItemData {
+  sold_quantity: number;
+  description: string;
+}
+
 interface ItemDetailResult {
   id: string;
   title: string;

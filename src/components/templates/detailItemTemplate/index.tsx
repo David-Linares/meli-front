@@ -1,16 +1,16 @@
 import { Redirect, useParams } from "react-router";
-import { Header } from "../../molecules/header/header.component";
+import { DetailItemPage } from "../../pages/DetailItemPage/detail-item-page";
 
 interface ItemsParams {
   id: string;
 }
 
-export function DetailItem() {
+export function DetailItemTemplate() {
   const { id } = useParams<ItemsParams>();
 
   if (!id) {
     return <Redirect to="/" />;
   }
 
-  return <Header></Header>;
+  return <DetailItemPage />;
 }

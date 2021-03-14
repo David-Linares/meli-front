@@ -1,3 +1,4 @@
+import { useHistory } from "react-router";
 import { formatter } from "../../../@shared/helpers";
 import { Text } from "../../atoms/Text/text.component";
 import {
@@ -15,9 +16,19 @@ interface ProductItemProps {
 }
 
 export function ProductItem({ productItem }: ProductItemProps) {
+  const history = useHistory();
+
+  function handleClick(id) {
+    history.push(`/items/${id}`);
+  }
   return (
     <ProductItemWrapper>
-      <ImageContainer img={productItem.picture} />
+      <ImageContainer
+        onClick={() => {
+          handleClick(productItem.id);
+        }}
+        img={productItem.picture}
+      />
       <InfoProductWrapper>
         <ProductInfo>
           <PriceInfo>
